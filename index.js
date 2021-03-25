@@ -1,14 +1,16 @@
-const findMatching = (drivers, name) => {
-    return drivers.filter(driver =>
-        driver.toLowerCase() === name.toLowerCase())
+
+
+
+const matchName = (drivers, string) => {
+    return drivers.filter(d => d.name === string)
 }
 
-const fuzzyMatch = (drivers, name) => {
-    return drivers.filter(driver => 
-        driver.toLowerCase().indexOf(name.toLowerCase()) === 0)
+const findMatching = (drivers, string) => {
+    return drivers.filter(d => d.toLowerCase() === string.toLowerCase())
 }
 
-const matchName = (drivers, name) => {
-    return drivers.filter(driver =>
-        driver.name === name)
+const fuzzyMatch = (drivers, string) => {
+    return drivers.filter(d => {
+        return d.toLowerCase().indexOf(string.toLowerCase()) === 0;
+    })
 }
